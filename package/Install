@@ -44,16 +44,30 @@ copy >NIL: PACKAGEDIR:screenshots/#?.iff SYSTEMDIR:Locale/Help/BestWB/screenshot
 
 echo "Installing 'BESTWB1'..."
 copy >NIL: PACKAGEDIR:bestwb1/BestWB.readme.txt SYSTEMDIR:Locale/Help buf 10
-unzip >NIL: -o PACKAGEDIR:bestwb1/Core.zip -d SYSTEMDIR:
+IF EXISTS "INSTALLDIR:Prefs/Amiga-OS-3.1.4-GlowIcons"
+  unzip >NIL: -o PACKAGEDIR:bestwb1/Core.zip -d SYSTEMDIR: -x *.info
 
-echo "Installing 'BESTWB2'..."
-unzip >NIL: -o PACKAGEDIR:bestwb2/Core2.zip -d SYSTEMDIR:
+  echo "Installing 'BESTWB2'..."
+  unzip >NIL: -o PACKAGEDIR:bestwb2/Core2.zip -d SYSTEMDIR: -x *.info *Workbench.prefs
 
-echo "Installing 'BESTWB3'..."
-unzip >NIL: -o PACKAGEDIR:bestwb3/Locale.zip -d SYSTEMDIR:
+  echo "Installing 'BESTWB3'..."
+  unzip >NIL: -o PACKAGEDIR:bestwb3/Locale.zip -d SYSTEMDIR:
 
-echo "Installing 'BESTWB4'..."
-unzip >NIL: -o PACKAGEDIR:bestwb4/Utilities.zip -d SYSTEMDIR:
+  echo "Installing 'BESTWB4'..."
+  unzip >NIL: -o PACKAGEDIR:bestwb4/Utilities.zip -d SYSTEMDIR: -x *.info
+ELSE
+  unzip >NIL: -o PACKAGEDIR:bestwb1/Core.zip -d SYSTEMDIR:
+
+  echo "Installing 'BESTWB2'..."
+  unzip >NIL: -o PACKAGEDIR:bestwb2/Core2.zip -d SYSTEMDIR: -x *Workbench.prefs
+
+  echo "Installing 'BESTWB3'..."
+  unzip >NIL: -o PACKAGEDIR:bestwb3/Locale.zip -d SYSTEMDIR:
+
+  echo "Installing 'BESTWB4'..."
+  unzip >NIL: -o PACKAGEDIR:bestwb4/Utilities.zip -d SYSTEMDIR:
+ENDIF
+
 
 ; set cpu 020 to 0
 set cpu020 "0"
