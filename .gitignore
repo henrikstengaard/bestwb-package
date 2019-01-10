@@ -1,0 +1,11 @@
+/*.zip
+package/*.zip
+!package/BetterWB1.zip
+!package/BetterWB2.zip
+!package/BetterWB3.zip
+!package/BetterWB4.zip
+!package/BetterWB5.zip
+!package/BetterWB6.zip
+package/README.guide
+package/README.html
+package/screenshots

@@ -1,0 +1,112 @@
+echo "Installing BetterWB. Please wait a few minutes..."
+
+Resident >NIL: unzip PURE
+SetEnv TZ MST7
+
+copy BestWB1:BestWB.readme.txt SYS:Locale/Help buf 10
+copy BestWB1:unzip sys:c buf 10
+
+unzip -o Core.zip -d SYS:
+
+echo ""
+echo "Please insert the floppy labeled 'BESTWB2' and wait a few minutes..."
+lab repeat2
+if exists BestWB2:
+  unzip -o BestWB2:Core2.zip -d SYS:
+  skip 2done
+endif
+skip repeat2 back
+lab 2done
+
+echo ""
+echo "Please insert the floppy labeled 'BESTWB3' and wait a few minutes..."
+lab repeat3
+if exists BestWB3:
+  unzip -o BestWB3:Locale.zip -d SYS:
+  skip 3done
+endif
+skip repeat3 back
+lab 3done
+
+echo ""
+echo "Please insert the floppy labeled 'BESTWB4' and wait a few minutes..."
+lab repeat4
+if exists BestWB4:
+  unzip -o BestWB4:Utilities.zip -d SYS:
+  skip 4done
+endif
+skip repeat4 back
+lab 4done
+
+cpu check 68000
+if not warn
+  delete sys:libs/icon.library force
+  copy BestWB4:icon.library sys:libs buf 10
+endif
+
+cpu check 68010
+if not warn
+  delete sys:libs/icon.library force
+  copy BestWB4:icon.library sys:libs buf 10
+endif
+
+cpu check 68020
+if not warn
+  delete sys:libs/icon.library force
+  copy BestWB4:020/icon.library sys:libs buf 10
+  delete sys:classes/datatypes/jfif.datatype force
+  copy BestWB4:020/jfif.datatype sys:classes/datatypes buf 10
+endif
+
+cpu check 68030
+if not warn
+  delete sys:libs/icon.library force
+  copy BestWB4:020/icon.library sys:libs buf 10
+  delete sys:classes/datatypes/jfif.datatype force
+  copy BestWB4:020/jfif.datatype sys:classes/datatypes buf 10
+endif
+
+cpu check 68040
+if not warn
+  delete sys:libs/icon.library force
+  copy BestWB4:020/icon.library sys:libs buf 10
+  delete sys:classes/datatypes/jfif.datatype force
+  copy BestWB4:020/jfif.datatype sys:classes/datatypes buf 10
+endif
+
+cpu check 68060
+if not warn
+  delete sys:libs/icon.library force
+  copy BestWB4:020/icon.library sys:libs buf 10
+  delete sys:classes/datatypes/jfif.datatype force
+  copy BestWB4:020/jfif.datatype sys:classes/datatypes buf 10
+endif
+
+if not exists sys:libs/68040.library
+  copy 68040.library sys:libs buf 10
+endif
+
+if not exists sys:libs/68060.library
+  copy 68060.library sys:libs buf 10
+endif
+
+protect SYS:libs/icon.library +p
+Protect SYS:Tools/PrepCard+ +s
+protect SYS:#? +rwe ALL
+
+
+; Delete obsolete files
+
+delete SYS:Tools/calculator
+delete SYS:Tools/calculator.info
+delete SYS:Tools/PrepCard.info
+
+echo ""
+echo ""
+echo "Installation complete."
+echo "Remove all floppies, reboot your Amiga, and enjoy!"
+echo ""
+echo "Goodbye"
+
+wait 5 sec
+quit

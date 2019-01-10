@@ -1,0 +1,116 @@
+; BestWB Package Install Script
+; -------------------------------
+;
+; Author: Henrik Noerfjand Stengaard
+; Date: 2019-01-10
+;
+; AmigaDOS script to extract and install BestWB. 
+
+
+; copy readme and screenshots to locale help for BestWB
+IF NOT EXISTS SYSTEMDIR:Locale/Help/BestWB
+  makepath >NIL: SYSTEMDIR:Locale/Help/BestWB
+  IF EXISTS SYSTEMDIR:Prefs/Env-Archive/Sys/def_drawer.info
+    makeicon >NIL: SYSTEMDIR:Locale/Help/BestWB FROM SYSTEMDIR:Prefs/Env-Archive/Sys/def_drawer.info 
+  ELSE
+    makeicon >NIL: SYSTEMDIR:Locale/Help/BestWB
+  ENDIF
+ENDIF
+IF NOT EXISTS SYSTEMDIR:Locale/Help.info
+  IF EXISTS SYSTEMDIR:Prefs/Env-Archive/Sys/def_drawer.info
+    makeicon >NIL: SYSTEMDIR:Locale/Help FROM SYSTEMDIR:Prefs/Env-Archive/Sys/def_drawer.info 
+  ELSE
+    makeicon >NIL: SYSTEMDIR:Locale/Help
+  ENDIF
+ENDIF
+IF NOT EXISTS SYSTEMDIR:Locale.info
+  IF EXISTS SYSTEMDIR:Prefs/Env-Archive/Sys/def_drawer.info
+    makeicon >NIL: SYSTEMDIR:Locale FROM SYSTEMDIR:Prefs/Env-Archive/Sys/def_drawer.info 
+  ELSE
+    makeicon >NIL: SYSTEMDIR:Locale
+  ENDIF
+ENDIF 
+copy >NIL: PACKAGEDIR:README SYSTEMDIR:Locale/Help/BestWB
+copy >NIL: PACKAGEDIR:README.guide SYSTEMDIR:Locale/Help/BestWB
+copy >NIL: PACKAGEDIR:README.info SYSTEMDIR:Locale/Help/BestWB
+IF NOT EXISTS SYSTEMDIR:Locale/Help/BestWB/screenshots
+  makepath >NIL: SYSTEMDIR:Locale/Help/BestWB/screenshots
+ENDIF
+copy >NIL: PACKAGEDIR:screenshots/#?.iff SYSTEMDIR:Locale/Help/BestWB/screenshots
+
+
+; install bestwb
+; --------------
+
+echo "Installing 'BESTWB1'..."
+copy >NIL: PACKAGEDIR:bestwb1/BestWB.readme.txt SYSTEMDIR:Locale/Help buf 10
+unzip >NIL: -o PACKAGEDIR:bestwb1/Core.zip -d SYSTEMDIR:
+
+echo "Installing 'BESTWB2'..."
+unzip >NIL: -o PACKAGEDIR:bestwb2/Core2.zip -d SYSTEMDIR:
+
+echo "Installing 'BESTWB3'..."
+unzip >NIL: -o PACKAGEDIR:bestwb3/Locale.zip -d SYSTEMDIR:
+
+echo "Installing 'BESTWB4'..."
+unzip >NIL: -o PACKAGEDIR:bestwb4/Utilities.zip -d SYSTEMDIR:
+
+; set cpu 020 to 0
+set cpu020 "0"
+
+; set cpu 020 to 1, if cpu is 68020
+cpu check 68020
+if not warn
+  set cpu020 "1"
+endif
+
+; set cpu 020 to 1, if cpu is 68030
+cpu check 68030
+if not warn
+  set cpu020 "1"
+endif
+
+; set cpu 020 to 1, if cpu is 68040
+cpu check 68040
+if not warn
+  set cpu020 "1"
+endif
+
+; set cpu 020 to 1, if cpu is 68060
+cpu check 68060
+if not warn
+  set cpu020 "1"
+endif
+
+; update icon.library and jfif.datatype for 020 cpu's, if cpu is 020 or better. otherwise just update
+IF "$cpu020" EQ 1 VAL
+  ; update icon.library and jfif.datatype for 60020 or better cpu
+  delete >NIL: SYSTEMDIR:libs/icon.library force
+  copy >NIL: PACKAGEDIR:bestwb4/020/icon.library SYSTEMDIR:libs buf 10
+  delete >NIL: SYSTEMDIR:classes/datatypes/jfif.datatype force
+  copy >NIL: PACKAGEDIR:bestwb4/020/jfif.datatype SYSTEMDIR:classes/datatypes buf 10
+ELSE
+  ; update icon.library
+  delete >NIL: SYSTEMDIR:libs/icon.library force
+  copy >NIL: BestWB4:icon.library SYSTEMDIR:libs buf 10
+ENDIF
+
+; copy 68040.library, if it doesn't exist
+if not exists SYSTEMDIR:libs/68040.library
+  copy >NIL: PACKAGEDIR:bestwb4/68040.library SYSTEMDIR:libs buf 10
+endif
+
+; copy 68060.library, if it doesn't exist
+if not exists SYSTEMDIR:libs/68060.library
+  copy >NIL: PACKAGEDIR:bestwb4/68060.library SYSTEMDIR:libs buf 10
+endif
+
+; update protection bits
+protect >NIL: SYSTEMDIR:libs/icon.library +p
+Protect >NIL: SYSTEMDIR:Tools/PrepCard+ +s
+protect >NIL: SYSTEMDIR:#? +rwe ALL
+
+; delete obsolete files
+delete >NIL: SYSTEMDIR:Tools/calculator
+delete >NIL: SYSTEMDIR:Tools/calculator.info
+delete >NIL: SYSTEMDIR:Tools/PrepCard.info

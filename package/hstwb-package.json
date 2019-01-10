@@ -1,0 +1,11 @@
+{
+    "name": "BestWB",
+    "version": "1.0.0",
+    "priority": 1,
+    "assigns":
+    [
+        {
+            "name": "SYSTEMDIR"
+        }
+    ]
+}

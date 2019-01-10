@@ -1,0 +1,77 @@
+
+BestWB v1.0 (AmigaOS 3.1.4 based)
+-----------
+
+The idea behind this BestWB distro/pack is to fill the gaps within 
+AmigaOS 3.1.4 whenever possible, following a conservative approach, 
+focusing on usability and not eye candy to deliver a non bloated, 
+user friendly working enviroment.
+
+Feature list:
+-A Find system tool so that the workbench menu "Find..." gets 
+activated 
+(SimpleFind).
+-New and Improved datatypes for gif, jpg, bmp, png, pcx, tga, 
+tiff, and wav media.
+-New Removable media partition mounter (SCSIMounter) 
+-New System snooper (SnoopDOS) 
+-Fast and easy to use floppy disk copier application (SuperDuper) 
+-Libraries for cpu support and better hardware detection 
+(MMULib+BoardsLib).
+-A filemanager to copy, move and delete files in an easier manner 
+(DirWork).
+-Lots of of handy commodities that make user experience much more 
+comfortable (GrabIFF, AssignWedge, CleverWIN, FreeWheel, Rewincy, 
+ToolsMenu, ToolAlias, NewMode, yStart, DosPrefs, BenchTrash, 
+PowerSnap, CronTask, PM and MagicMenu).
+-58 additional workbench printer drivers 
+(take a peek at your SYS:Storage/printers drawer).
+-Complementary commands like AddMem, DMS, WBCtrl, and showboards.
+-ZIP and JAZ drive support with their corresponding mountlists 
+(IOTools).
+-XPKMaster offers a data compression/decompression library 
+available to programs that support it.
+-Charmap is a tool that helps dealing with all the characters of a 
+given font. Useful for accents and uncommon characters.
+-Prepcard+ helps the user to manage many hardware on the pcmcia port
+-The popular LHA, LZX, GZIP and ZIP/UNZIP archiver commands are 
+installed in their latest incarnation.
+-Compact Disk audio player with lots of great features (ACDPlay)
+-Midi support for many programs with camd.library and the Midiports 
+preferences application.
+-New graphic interface that lets you read and write back adf and dms 
+floppy images (TSGUI).
+-There is a new preferences program (WBStartupPrefs) that lets you 
+easily handle the WBStartup and Commodities drawer.
+-The light weight but otherwise efficient Redit text editor is also 
+included.
+-New monitors drivers for native Amiga chipset (Film24, HD720, 
+HighGFX, SuperPlus and Xtreme).
+-FontView is an app able to browse thru available fonts and report 
+their characteristics.
+-A Backup tool that can even be made to work with non Amiga 
+partitions (ABackup).
+-Shell with command completion, scrollbars and lots of other nice 
+features thanks to VinCed.
+-A workbench friendly NSD/TD64 compatible drive defragmenter 
+(DiskOptimizer).
+-Totalcalc is a replacement calculator that can even be configured 
+as an advanced scientific one.
+-Unpacker aids the user in uncompressing archived files with a GUI.
+-A very fast antivirus that supports xvs.library is now deployed 
+(Fungicide).
+-TextView is an advanced text viewer that supports html between 
+other formats.
+-DTView2 is a simple and efficient picture viewer.
+-IconLib 46.4 is a fast icon.library reimplementation that allows you 
+to see all types of icons (standard, newicons, glowicons, png, etc.).
+-FullPalette will let you lock and optimize palettes.
+-A complete set of manuals that explain all these new features. They 
+are inside HELP:.
+-And much more.
+
+Requirements:
+A clean installation of AmigaOS 3.1.4.
+About 8 MB of of free harddisk space.
+
+kurq@yahoo.com
