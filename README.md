@@ -78,11 +78,11 @@ BestWB files will be installed and configured in SYSTEMDIR: assign, which must b
 
 BestWB is installed from a zip files copied from BestWB adf files.
 
-The install script for BestWB package is based on S/Startup-Sequence from MISC31_#1.adf with following changes:
+The install script for BestWB package is based on Install_BestWB from BESTWB1 with following changes:
 
 - Paths has been changed: SYS: to SYSTEMDIR:.
-- Removed waits for next floppy.
-- Removed ENV-HANDLER patch.
+- Excluded Workbench.prefs from being installed. 
+- Added GlowIcons for BestWB icons.
 
 ## Screenshots
 
