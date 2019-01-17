@@ -1,0 +1,7 @@
+Assign SYSTEMDIR: DH0:
+Assign PACKAGEDIR: PC:package
+
+Execute PACKAGEDIR:Update-Icons
+
+Assign PACKAGEDIR: REMOVE
+Assign SYSTEMDIR: REMOVE

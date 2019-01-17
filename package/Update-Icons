@@ -1,0 +1,336 @@
+; update datatypes icons
+; ----------------------
+
+PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Devs/DataTypes/ILBM" "SYSTEMDIR:Devs/DataTypes/GIF"
+PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Devs/DataTypes/ILBM" "SYSTEMDIR:Devs/DataTypes/JFIF"
+PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Devs/DataTypes/ILBM" "SYSTEMDIR:Devs/DataTypes/PCX"
+PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Devs/DataTypes/ILBM" "SYSTEMDIR:Devs/DataTypes/PNG"
+PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Devs/DataTypes/ILBM" "SYSTEMDIR:Devs/DataTypes/Targa"
+PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Devs/DataTypes/ILBM" "SYSTEMDIR:Devs/DataTypes/TIFF"
+PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Devs/DataTypes/ILBM" "SYSTEMDIR:Devs/DataTypes/WAVE"
+PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Devs/DataTypes/ILBM" "SYSTEMDIR:Devs/DataTypes/Windows BMP"
+
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Devs/DataTypes/8SVX" X 8 Y 4
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Devs/DataTypes/AmigaGuide" X 81 Y 4
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Devs/DataTypes/ANIM" X 154 Y 4
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Devs/DataTypes/CDXL" X 231 Y 4
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Devs/DataTypes/FTXT" X 308 Y 4
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Devs/DataTypes/GIF" X 8 Y 65
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Devs/DataTypes/ILBM" X 81 Y 65
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Devs/DataTypes/JFIF" X 154 Y 65
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Devs/DataTypes/PCX" X 231 Y 65
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Devs/DataTypes/PNG" X 308 Y 65
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Devs/DataTypes/Targa" X 8 Y 126
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Devs/DataTypes/TIFF" X 81 Y 126
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Devs/DataTypes/WAVE" X 154 Y 126
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Devs/DataTypes/Windows BMP" X 231 Y 126
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Devs/DataTypes" DLEFT 50 DTOP 40 DWIDTH 392 DHEIGHT 230
+
+
+; update dosdrivers icons
+; -----------------------
+
+PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Devs/DOSDrivers/PIPE" "SYSTEMDIR:Devs/DOSDrivers/VNC"
+PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Devs/DOSDrivers/PIPE" "SYSTEMDIR:Devs/DOSDrivers/VNR"
+
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Devs/DOSDrivers/PIPE" X 8 Y 4
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Devs/DOSDrivers/VNC" X 64 Y 4
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Devs/DOSDrivers/VNR" X 120 Y 4
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Devs/DOSDrivers" DLEFT 50 DTOP 40 DWIDTH 206 DHEIGHT 104
+
+
+; update prefs icons
+; ------------------
+
+PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Prefs/Time" "SYSTEMDIR:Prefs/CronPrefs"
+PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Prefs/Palette" "SYSTEMDIR:Prefs/FullPalette"
+PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:WBStartup" "SYSTEMDIR:Prefs/WBStartupPrefs"
+PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Prefs/Sound" "SYSTEMDIR:Prefs/MidiPorts"
+
+IF EXISTS "SYSTEMDIR:Icons/AmigaOS314IconPack/Disk/BackUP.info"
+  PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Icons/AmigaOS314IconPack/Disk/BackUP/BackUP" "SYSTEMDIR:Prefs/ABackupPrefs"
+  PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Prefs/ABackupPrefs" X 45 Y 4
+ELSE
+  PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Prefs/ABackupPrefs" X 38 Y 24
+ENDIF
+
+IF EXISTS "SYSTEMDIR:Icons/AmigaOS314IconPack/Tools/SimpleFind3.info"
+  PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Icons/AmigaOS314IconPack/Tools/SimpleFind3" "SYSTEMDIR:Prefs/SimpleFindPrefs"
+  PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Prefs/SimpleFindPrefs" X 45 Y 309
+ELSE
+  PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Prefs/SimpleFindPrefs" X 38 Y 329
+ENDIF
+
+IF EXISTS "SYSTEMDIR:Icons/AmigaOS314IconPack/Tools/MagicMenu.info"
+  PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Icons/AmigaOS314IconPack/Tools/MagicMenu" "SYSTEMDIR:Prefs/MagicMenuPrefs"
+  PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Prefs/MagicMenuPrefs" X 45 Y 126
+ELSE
+  PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Prefs/MagicMenuPrefs" X 38 Y 146
+ENDIF
+
+IF EXISTS "SYSTEMDIR:Icons/AmigaOS314IconPack/Tools/ViNCEd/Prefs/SetVNC.info"
+  PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Icons/AmigaOS314IconPack/Tools/ViNCEd/Prefs/SetVNC" "SYSTEMDIR:Prefs/SetVNC"
+ELSE
+  PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Prefs/ScreenMode" "SYSTEMDIR:Prefs/SetVNC"
+ENDIF
+
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Prefs/Asl" X 155 Y 4
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Prefs/CronPrefs" X 241 Y 4
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Prefs/Font" X 327 Y 4
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Prefs/FullPalette" X 45 Y 65
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Prefs/IControl" X 155 Y 65
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Prefs/Input" X 241 Y 65
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Prefs/Locale" X 327 Y 65
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Prefs/MidiPorts" X 155 Y 126
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Prefs/Overscan" X 241 Y 126
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Prefs/Palette" X 327 Y 126
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Prefs/Pointer" X 45 Y 187
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Prefs/Presets" X 155 Y 187
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Prefs/Printer" X 241 Y 187
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Prefs/PrinterGfx" X 327 Y 187
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Prefs/PrinterPS" X 44 Y 248
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Prefs/ScreenMode" X 155 Y 248
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Prefs/Serial" X 241 Y 248
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Prefs/SetVNC" X 327 Y 248
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Prefs/Sound" X 155 Y 309
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Prefs/Time" X 241 Y 309
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Prefs/WBPattern" X 327 Y 309
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Prefs/WBStartupPrefs" X 45 Y 370
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Prefs/Workbench" X 155 Y 370
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Prefs" DLEFT 50 DTOP 40 DWIDTH 440 DHEIGHT 300
+
+
+; update storage dosdrivers icons
+; -------------------------------
+IF EXISTS "SYSTEMDIR:Icons/AmigaOS314IconPack/Extras/Media/def_card"
+  PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Icons/AmigaOS314IconPack/Extras/Media/def_card" "SYSTEMDIR:Storage/DOSDrivers/CF0"
+ENDIF
+
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Storage/DOSDrivers/CD0" X 72 Y 4
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Storage/DOSDrivers/CF0" X 128 Y 28
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Storage/DOSDrivers/JAZ0" X 192 Y 28
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Storage/DOSDrivers/JAZ2" X 256 Y 28
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Storage/DOSDrivers/JAZPC" X 8 Y 89
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Storage/DOSDrivers/PC0" X 72 Y 65
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Storage/DOSDrivers/PC1" X 132 Y 65
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Storage/DOSDrivers/RAD" X 196 Y 65
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Storage/DOSDrivers/ZIC" X 256 Y 89
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Storage/DOSDrivers/ZIP" X 8 Y 126
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Storage/DOSDrivers" DLEFT 95 DTOP 78 DWIDTH 360 DHEIGHT 200
+
+
+; update storage monitors icons
+; -----------------------------
+
+PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Storage/Monitors/Multiscan" "SYSTEMDIR:Storage/Monitors/Film24"
+PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Storage/Monitors/Multiscan" "SYSTEMDIR:Storage/Monitors/HD720"
+PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Storage/Monitors/Multiscan" "SYSTEMDIR:Storage/Monitors/HighGFX"
+PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Storage/Monitors/Multiscan" "SYSTEMDIR:Storage/Monitors/PAL"
+PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Storage/Monitors/Multiscan" "SYSTEMDIR:Storage/Monitors/SuperPlus"
+PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Storage/Monitors/Multiscan" "SYSTEMDIR:Storage/Monitors/Xtreme"
+
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Storage/Monitors/A2024" X 9 Y 4
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Storage/Monitors/DblNTSC" X 71 Y 4
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Storage/Monitors/DblPAL" X 145 Y 4
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Storage/Monitors/Euro36" X 227 Y 4
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Storage/Monitors/Euro72" X 297 Y 4
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Storage/Monitors/Film24" X 9 Y 65
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Storage/Monitors/HD720" X 71 Y 65
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Storage/Monitors/HighGFX" X 145 Y 65
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Storage/Monitors/Multiscan" X 227 Y 65
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Storage/Monitors/NTSC" X 297 Y 65
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Storage/Monitors/PAL" X 9 Y 126
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Storage/Monitors/Super72" X 71 Y 126
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Storage/Monitors/SuperPlus" X 145 Y 126
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Storage/Monitors/VGAOnly" X 227 Y 126
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Storage/Monitors/Xtreme" X 297 Y 126
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Storage/Monitors" DLEFT 80 DTOP 46 DWIDTH 382 DHEIGHT 218
+
+
+; update system icons
+; -------------------
+
+PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:System/FixFonts" "SYSTEMDIR:System/Fontview"
+
+IF EXISTS "SYSTEMDIR:Icons/AmigaOS314IconPack/Tools/FileX.info"
+  PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Icons/AmigaOS314IconPack/Tools/FileX" "SYSTEMDIR:System/Find"
+  PACKAGEDIR:Tools/IconPos "SYSTEMDIR:System/Find" X 21 Y 4
+ELSE
+  PACKAGEDIR:Tools/IconPos "SYSTEMDIR:System/Find" X 17 Y 28
+ENDIF
+
+IF EXISTS "SYSTEMDIR:Icons/AmigaOS314IconPack/Disk/BackUP/BackUP.info"
+  PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Icons/AmigaOS314IconPack/Disk/BackUP/BackUP" "SYSTEMDIR:System/SD"
+  PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Icons/AmigaOS314IconPack/Disk/BackUP/BackUP" "SYSTEMDIR:System/TSGUI"
+  PACKAGEDIR:Tools/IconPos "SYSTEMDIR:System/SD" X 111 Y 126
+  PACKAGEDIR:Tools/IconPos "SYSTEMDIR:System/TSGUI" X 111 Y 187
+ELSE
+  PACKAGEDIR:Tools/IconPos "SYSTEMDIR:System/SD" X 107 Y 150
+  PACKAGEDIR:Tools/IconPos "SYSTEMDIR:System/TSGUI" X 107 Y 187
+ENDIF
+
+IF EXISTS "SYSTEMDIR:Icons/AmigaOS314IconPack/Tools/ViNCEd/Shell_VNC.info"
+  PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Icons/AmigaOS314IconPack/Tools/ViNCEd/Shell_VNC" "SYSTEMDIR:System/Shell_VNC"
+ELSE
+  PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:System/Shell" "SYSTEMDIR:System/Shell_VNC"
+ENDIF
+
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:System/FixFonts" X 111 Y 4
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:System/FontView" X 197 Y 4
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:System/Format" X 21 Y 65
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:System/Intellifont" X 111 Y 65
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:System/NoFastMem" X 201 Y 65
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:System/RexxMast" X 21 Y 126
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:System/Shell" X 201 Y 126
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:System/Shell_VNC" X 17 Y 187
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:System" DLEFT 70 DTOP 57 DWIDTH 316 DHEIGHT 278
+
+
+; update tools icons
+; ------------------
+
+IF EXISTS "SYSTEMDIR:Icons/AmigaOS314IconPack/Disk/BackUP/BackUP.info"
+  PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Icons/AmigaOS314IconPack/Disk/BackUP/BackUP" "SYSTEMDIR:Tools/ABackup"
+  PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/ABackup" X 37 Y 4
+ELSE
+  PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/ABackup" X 37 Y 28
+ENDIF
+
+IF EXISTS "SYSTEMDIR:Icons/AmigaOS314IconPack/Disk/DOpus/DirectoryOpus.info"
+  PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Icons/AmigaOS314IconPack/Disk/DOpus/DirectoryOpus" "SYSTEMDIR:Tools/DW"
+  PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/DW" X 139 Y 65
+ELSE
+  PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/DW" X 139 Y 89
+ENDIF
+
+IF EXISTS "SYSTEMDIR:Icons/AmigaOS314IconPack/Tools/Redit2.0.info"
+  PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Icons/AmigaOS314IconPack/Tools/Redit2.0/Redit" "SYSTEMDIR:Tools/Redit"
+  PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/Redit" X 139 Y 187
+ELSE
+  PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/Redit" X 139 Y 211
+ENDIF
+
+IF EXISTS "SYSTEMDIR:Icons/AmigaOS314IconPack/Extras/DefIcons/def_drawer.info"
+  PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Icons/AmigaOS314IconPack/Extras/DefIcons/def_drawer" "SYSTEMDIR:Tools/Commodities"
+  PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/Commodities" X 421 Y 4
+ELSE
+  PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/Commodities" X 417 Y 38
+ENDIF
+
+IF EXISTS "SYSTEMDIR:Icons/AmigaOS314IconPack/Tools/burngui.info"
+  PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Icons/AmigaOS314IconPack/Tools/burngui" "SYSTEMDIR:Tools/Unpacker"
+  PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/Unpacker" X 37 Y 248
+ELSE
+  PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/Unpacker" X 37 Y 248
+ENDIF
+
+IF EXISTS "SYSTEMDIR:Icons/AmigaOS314IconPack/Extras/Media/OS SCSI/def_harddisk.info"
+  PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Icons/AmigaOS314IconPack/Extras/Media/OS SCSI/def_harddisk" "SYSTEMDIR:Tools/SCSIMounter"
+  PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/SCSIMounter" X 233 Y 187
+ELSE
+  PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/SCSIMounter" X 233 Y 211
+ENDIF
+
+PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Tools/HDToolBox" "SYSTEMDIR:Tools/DiskOptimizer"
+PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Tools/KeyShow" "SYSTEMDIR:Tools/CharMap"
+;PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Tools/PrepCard" "SYSTEMDIR:Tools/PrepCard+"
+;PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Tools/Calculator" "SYSTEMDIR:Tools/TotalCalc"
+
+;PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/Calculator" X 139 Y 4
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/CharMap" X 233 Y 4
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/CMD" X 327 Y 4
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/DiskOptimizer" X 37 Y 65
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/GraphicDump" X 233 Y 65
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/HDToolBox" X 327 Y 65
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/IconEdit" X 421 Y 65
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/InitPrinter" X 37 Y 126
+;PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/IoTools" X 135 Y 150
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/KeyShow" X 233 Y 126
+;PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/PrepCard+" X 417 Y 126
+;PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/PrepCard" X 327 Y 126
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/PrintFiles" X 37 Y 187
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/ShowConfig" X 327 Y 187
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/TotalCalc" X 417 Y 187
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools" DLEFT 30 DTOP 30 DWIDTH 520 DHEIGHT 331
+
+
+; update tools commodities icons
+; ------------------------------
+
+IF EXISTS "SYSTEMDIR:Icons/AmigaOS314IconPack/Tools/MagicMenu.info"
+  PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Icons/AmigaOS314IconPack/Tools/MagicMenu" "SYSTEMDIR:Tools/Commodities/MagicMenu"
+  PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/Commodities/MagicMenu" X 315 Y 127
+ELSE
+  PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/Commodities/MagicMenu" X 315 Y 150
+ENDIF
+
+IF EXISTS "SYSTEMDIR:Icons/AmigaOS314IconPack/Tools/SGrab.info"
+  PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Icons/AmigaOS314IconPack/Tools/SGrab" "SYSTEMDIR:Tools/Commodities/GrabIFF"
+  PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/Commodities/GrabIFF" X 221 Y 127
+ELSE
+  PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/Commodities/GrabIFF" X 217 Y 150
+ENDIF
+
+IF EXISTS "SYSTEMDIR:Icons/AmigaOS314IconPack/Tools/ToolManager/ToolManager.info"
+  PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Icons/AmigaOS314IconPack/Tools/ToolManager/ToolManager" "SYSTEMDIR:Tools/Commodities/ToolsMenu"
+  PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/Commodities/ToolsMenu" X 315 Y 249
+ELSE
+  PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/Commodities/ToolsMenu" X 315 Y 249
+ENDIF
+
+IF EXISTS "SYSTEMDIR:Icons/GlowIcons"
+  PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Icons/GlowIcons/Trashcan" "SYSTEMDIR:Tools/Commodities/BenchTrash"
+  PACKAGEDIR:Tools/CopyIcon "SYSTEMDIR:Icons/GlowIcons/Prefs/Time" "SYSTEMDIR:Tools/Commodities/CronTask"
+  PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/Commodities/BenchTrash" X 131 Y 3
+  PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/Commodities/CronTask" X 33 Y 66
+ELSE
+  PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/Commodities/BenchTrash" X 127 Y 28
+  PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/Commodities/CronTask" X 29 Y 89
+ENDIF
+
+;DOSPrefs
+;FreeWheel
+;NewMode
+;PM
+;PowerSnap
+;Rewincy
+;ToolAlias
+;yStart
+
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/Commodities/AutoPoint" X 33 Y 4
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/Commodities/Blanker" X 221 Y 4
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/Commodities/ClickToFront" X 319 Y 4
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/Commodities/CrossDOS" X 131 Y 66
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/Commodities/DOSPrefs" X 216 Y 89
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/Commodities/Exchange" X 319 Y 66
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/Commodities/FKey" X 33 Y 126
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/Commodities/FreeWheel" X 127 Y 152
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/Commodities/MouseBlanker" X 33 Y 187
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/Commodities/NewMode" X 127 Y 211
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/Commodities/NoCapsLock" X 221 Y 187
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/Commodities/PM" X 315 Y 211
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/Commodities/PowerSnap" X 29 Y 273
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/Commodities/Rewincy" X 126 Y 272
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/Commodities/ToolAlias" X 217 Y 273
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/Commodities/yStart" X 29 Y 310
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Tools/Commodities" DLEFT 15 DTOP 45 DWIDTH 432 DHEIGHT 288
+
+
+; update utilities icons
+; ----------------------
+
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Utilities/ACDPlay" X 12 Y 27
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Utilities/AntiVirus" X 91 Y 28
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Utilities/Clock" X 173 Y 4
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Utilities/DTView2" X 13 Y 89
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Utilities/MultiView" X 95 Y 65
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Utilities/SnoopDos" X 169 Y 89
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Utilities/TextView" X 13 Y 126
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:Utilities" DLEFT 75 DTOP 104 DWIDTH 268 DHEIGHT 204
+
+
+; update wbstartup icons
+; ----------------------
+
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:WBStartup/AssignWedge" X 24 Y 4
+PACKAGEDIR:Tools/IconPos "SYSTEMDIR:WBStartup/CleverWIN" X 115 Y 5
