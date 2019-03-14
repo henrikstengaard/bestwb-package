@@ -7,5 +7,8 @@
         {
             "name": "SYSTEMDIR"
         }
+    ],
+    "amigaOsVersions": [
+        "3.1.4"
     ]
 }
