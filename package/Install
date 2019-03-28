@@ -2,7 +2,7 @@
 ; -------------------------------
 ;
 ; Author: Henrik Noerfjand Stengaard
-; Date: 2019-03-14
+; Date: 2019-03-28
 ;
 ; AmigaDOS script to extract and install BestWB. 
 
@@ -39,8 +39,8 @@ ENDIF
 copy >NIL: PACKAGEDIR:screenshots/#?.iff SYSTEMDIR:Locale/Help/BestWB/screenshots
 
 
-; install bestwb
-; --------------
+; install bestwb v1.0
+; -------------------
 
 echo "Installing 'BESTWB1'..."
 copy >NIL: PACKAGEDIR:bestwb1/BestWB.readme.txt SYSTEMDIR:Locale/Help buf 10
@@ -67,7 +67,6 @@ ELSE
   echo "Installing 'BESTWB4'..."
   unzip >NIL: -o PACKAGEDIR:bestwb4/Utilities.zip -d SYSTEMDIR:
 ENDIF
-
 
 ; set cpu 020 to 0
 set cpu020 "0"
@@ -128,6 +127,48 @@ protect >NIL: SYSTEMDIR:#? +rwe ALL
 delete >NIL: SYSTEMDIR:Tools/calculator
 delete >NIL: SYSTEMDIR:Tools/calculator.info
 delete >NIL: SYSTEMDIR:Tools/PrepCard.info
+
+
+; install bestwb v1.1
+; -------------------
+
+echo "Installing 'BESTWBUP111'..."
+unzip >NIL: -o PACKAGEDIR:bestwbup111/Update111.zip -d SYSTEMDIR:
+
+IF "$cpu020" EQ 1 VAL
+  delete >NIL: SYSTEMDIR:libs/icon.library force
+  copy >NIL: PACKAGEDIR:bestwbup111/020/icon.library SYSTEMDIR:libs buf 10
+  delete >NIL: SYSTEMDIR:libs/gtlayout.library force
+  copy >NIL: PACKAGEDIR:bestwbup111/020/gtlayout.library SYSTEMDIR:libs buf 10
+  delete >NIL: SYSTEMDIR:utilities/dtview2 force
+  copy >NIL: PACKAGEDIR:bestwbup111/020/dtview2 SYSTEMDIR:utilities buf 10
+  delete >NIL: SYSTEMDIR:prefs/mmenuprefs force
+  copy >NIL: PACKAGEDIR:bestwbup111/020/mmenuprefs SYSTEMDIR:prefs buf 10
+  delete >NIL: SYSTEMDIR:locale/help/english/magicmenu.guide force
+  copy >NIL: PACKAGEDIR:bestwbup111/020/magicmenu.guide SYSTEMDIR:locale/help/english buf 10
+  If exists SYSTEMDIR:tools/commodities/magicmenu
+    delete >NIL: SYSTEMDIR:tools/commodities/magicmenu force
+    copy >NIL: PACKAGEDIR:bestwbup111/020/magicmenu SYSTEMDIR:tools/commodities buf 10
+  endif
+  If exists SYSTEMDIR:wbstartup/magicmenu
+    delete >NIL: SYSTEMDIR:wbstartup/magicmenu force
+    copy >NIL: PACKAGEDIR:bestwbup111/020/magicmenu SYSTEMDIR:wbstartup buf 10
+  endif
+endif
+
+echo "Installing 'BESTWBUP112'..."
+unzip >NIL: -o PACKAGEDIR:bestwbup112/Update112.zip -d SYSTEMDIR:
+
+protect >NIL: SYSTEMDIR:libs/icon.library +p
+protect >NIL: SYSTEMDIR:#? +rwe ALL
+
+; rework updates
+if exists SYSTEMDIR:Prefs/ABackupPrefs
+  delete >NIL: SYSTEMDIR:Prefs/ABackupPrefs force
+  delete >NIL: SYSTEMDIR:Prefs/ABackupPrefs.info force
+  copy >NIL: PACKAGEDIR:bestwbup111/Temp/ABackup SYSTEMDIR:prefs buf 10
+  copy >NIL: PACKAGEDIR:bestwbup111/Temp/Abackup.info SYSTEMDIR:prefs buf 10
+endif
 
 
 ; update icons

@@ -1,0 +1,40 @@
+
+BestWB Update from v1.0 to v1.1 (AmigaOS 3.1.4 based)
+-----------------------------------------------------
+
+Please make a complete system backup before updating!
+
+
+Requirements:
+
+A clean installation of AmigaOS 3.1.4 + BestWB v1.0
+About 2 MB of free harddisk space.
+
+
+Changes in this v1.1 update
+---------------------------
+
+New Features:
+
+.IconSet prefs lets you switch between Standard icons and GlowIcons.
+.WindowTiler commodity lets you reorganize windows more effectively.
+
+Updates:
+
+.MMULib 46.12 -> 46.17
+.Compactflash.device 1.32 -> 1.33
+.DTView2 1.1a -> 1.4
+.IconLib 46.4.500 -> 46.4.513
+.ToolsMenu 1.5 -> 1.8.1
+
+Bugfixes:
+
+.CronPrefs now gets started when CronTask is active.
+.ABackupPrefs has been renamed and is now accesible from Tools/ABackup.
+.MagicMenuPrefs now is able to start when MagicMenu is active.
+.Gtlayout.library V47.2 was buggy, downgraded to a previous version.
+.Updated CF0: mountlist to work with CrossDOS.
+.Fixed MMULib installation.
+
+
+ignaciogully@gmail.com
