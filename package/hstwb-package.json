@@ -1,6 +1,11 @@
 {
+    "selectionIds":
+    [
+        "bestwb",
+        "amigaos"
+    ],
     "name": "BestWB",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "priority": 1,
     "assigns":
     [
