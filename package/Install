@@ -2,7 +2,7 @@
 ; -------------------------------
 ;
 ; Author: Henrik Noerfjand Stengaard
-; Date: 2019-03-28
+; Date: 2019-08-01
 ;
 ; AmigaDOS script to extract and install BestWB. 
 
@@ -43,7 +43,7 @@ copy >NIL: PACKAGEDIR:screenshots/#?.iff SYSTEMDIR:Locale/Help/BestWB/screenshot
 ; -------------------
 
 echo "Installing 'BESTWB1'..."
-copy >NIL: PACKAGEDIR:bestwb1/BestWB.readme.txt SYSTEMDIR:Locale/Help buf 10
+copy >NIL: PACKAGEDIR:bestwb1/BestWB.readme.txt SYSTEMDIR:Locale/Help
 IF EXISTS "INSTALLDIR:Prefs/Amiga-OS-3.1.4-GlowIcons"
   unzip >NIL: -o PACKAGEDIR:bestwb1/Core.zip -d SYSTEMDIR: -x *Devs.info *Disk.info *Printers.info *Keymaps.info *DOSDrivers.info *DataTypes.info *Monitors.info
 
@@ -99,23 +99,23 @@ endif
 IF "$cpu020" EQ 1 VAL
   ; update icon.library and jfif.datatype for 60020 or better cpu
   delete >NIL: SYSTEMDIR:libs/icon.library force
-  copy >NIL: PACKAGEDIR:bestwb4/020/icon.library SYSTEMDIR:libs buf 10
+  copy >NIL: PACKAGEDIR:bestwb4/020/icon.library SYSTEMDIR:libs
   delete >NIL: SYSTEMDIR:classes/datatypes/jfif.datatype force
-  copy >NIL: PACKAGEDIR:bestwb4/020/jfif.datatype SYSTEMDIR:classes/datatypes buf 10
+  copy >NIL: PACKAGEDIR:bestwb4/020/jfif.datatype SYSTEMDIR:classes/datatypes
 ELSE
   ; update icon.library
   delete >NIL: SYSTEMDIR:libs/icon.library force
-  copy >NIL: BestWB4:icon.library SYSTEMDIR:libs buf 10
+  copy >NIL: BestWB4:icon.library SYSTEMDIR:libs
 ENDIF
 
 ; copy 68040.library, if it doesn't exist
 if not exists SYSTEMDIR:libs/68040.library
-  copy >NIL: PACKAGEDIR:bestwb4/68040.library SYSTEMDIR:libs buf 10
+  copy >NIL: PACKAGEDIR:bestwb4/68040.library SYSTEMDIR:libs
 endif
 
 ; copy 68060.library, if it doesn't exist
 if not exists SYSTEMDIR:libs/68060.library
-  copy >NIL: PACKAGEDIR:bestwb4/68060.library SYSTEMDIR:libs buf 10
+  copy >NIL: PACKAGEDIR:bestwb4/68060.library SYSTEMDIR:libs
 endif
 
 ; update protection bits
@@ -137,22 +137,22 @@ unzip >NIL: -o PACKAGEDIR:bestwbup111/Update111.zip -d SYSTEMDIR:
 
 IF "$cpu020" EQ 1 VAL
   delete >NIL: SYSTEMDIR:libs/icon.library force
-  copy >NIL: PACKAGEDIR:bestwbup111/020/icon.library SYSTEMDIR:libs buf 10
+  copy >NIL: PACKAGEDIR:bestwbup111/020/icon.library SYSTEMDIR:libs
   delete >NIL: SYSTEMDIR:libs/gtlayout.library force
-  copy >NIL: PACKAGEDIR:bestwbup111/020/gtlayout.library SYSTEMDIR:libs buf 10
+  copy >NIL: PACKAGEDIR:bestwbup111/020/gtlayout.library SYSTEMDIR:libs
   delete >NIL: SYSTEMDIR:utilities/dtview2 force
-  copy >NIL: PACKAGEDIR:bestwbup111/020/dtview2 SYSTEMDIR:utilities buf 10
+  copy >NIL: PACKAGEDIR:bestwbup111/020/dtview2 SYSTEMDIR:utilities
   delete >NIL: SYSTEMDIR:prefs/mmenuprefs force
-  copy >NIL: PACKAGEDIR:bestwbup111/020/mmenuprefs SYSTEMDIR:prefs buf 10
+  copy >NIL: PACKAGEDIR:bestwbup111/020/mmenuprefs SYSTEMDIR:prefs
   delete >NIL: SYSTEMDIR:locale/help/english/magicmenu.guide force
-  copy >NIL: PACKAGEDIR:bestwbup111/020/magicmenu.guide SYSTEMDIR:locale/help/english buf 10
+  copy >NIL: PACKAGEDIR:bestwbup111/020/magicmenu.guide SYSTEMDIR:locale/help/english
   If exists SYSTEMDIR:tools/commodities/magicmenu
     delete >NIL: SYSTEMDIR:tools/commodities/magicmenu force
-    copy >NIL: PACKAGEDIR:bestwbup111/020/magicmenu SYSTEMDIR:tools/commodities buf 10
+    copy >NIL: PACKAGEDIR:bestwbup111/020/magicmenu SYSTEMDIR:tools/commodities
   endif
   If exists SYSTEMDIR:wbstartup/magicmenu
     delete >NIL: SYSTEMDIR:wbstartup/magicmenu force
-    copy >NIL: PACKAGEDIR:bestwbup111/020/magicmenu SYSTEMDIR:wbstartup buf 10
+    copy >NIL: PACKAGEDIR:bestwbup111/020/magicmenu SYSTEMDIR:wbstartup
   endif
 endif
 
@@ -166,9 +166,72 @@ protect >NIL: SYSTEMDIR:#? +rwe ALL
 if exists SYSTEMDIR:Prefs/ABackupPrefs
   delete >NIL: SYSTEMDIR:Prefs/ABackupPrefs force
   delete >NIL: SYSTEMDIR:Prefs/ABackupPrefs.info force
-  copy >NIL: PACKAGEDIR:bestwbup111/Temp/ABackup SYSTEMDIR:prefs buf 10
-  copy >NIL: PACKAGEDIR:bestwbup111/Temp/Abackup.info SYSTEMDIR:prefs buf 10
+  copy >NIL: PACKAGEDIR:bestwbup111/Temp/ABackup SYSTEMDIR:prefs
+  copy >NIL: PACKAGEDIR:bestwbup111/Temp/Abackup.info SYSTEMDIR:prefs
 endif
+
+
+; install bestwb v1.2
+; -------------------
+
+echo "Installing 'BESTWBUP121'..."
+
+unzip >NIL: -o PACKAGEDIR:bestwbup121/BestWBup121.zip -d SYSTEMDIR:
+
+echo "Installing 'BESTWBUP122'..."
+
+unzip >NIL: -o PACKAGEDIR:bestwbup122/BestWBup122.zip -d SYSTEMDIR:
+
+; Here goes the crazy trip
+
+if exists SYSTEMDIR:locale/help/english/rewincy.readme
+  rename >NIL: SYSTEMDIR:locale/help/english/rewincy.readme to SYSTEMDIR:locale/help/english/rewincy.readme.txt
+endif
+
+if exists SYSTEMDIR:locale/help/english/cfd.txt
+  delete >NIL: SYSTEMDIR:locale/help/english/cfd.txt force
+endif
+
+if exists SYSTEMDIR:tools/commodities/Ystart
+  delete >NIL: SYSTEMDIR:tools/commodities/Ystart force
+  delete >NIL: SYSTEMDIR:tools/commodities/Ystart.info force
+  delete >NIL: SYSTEMDIR:locale/help/english/ystart.txt force
+  delete >NIL: SYSTEMDIR:storage/glowicons/tools/commodities/Ystart.info force
+  delete >NIL: SYSTEMDIR:storage/4colicons/tools/commodities/Ystart.info force
+endif
+
+If exists SYSTEMDIR:wbstartup/cleverwin
+  delete >NIL: SYSTEMDIR:wbstartup/cleverwin force
+  delete >NIL: SYSTEMDIR:wbstartup/cleverwin.info force
+  delete >NIL: SYSTEMDIR:locale/help/english/cleverwin.doc force
+  delete >NIL: SYSTEMDIR:storage/glowicons/wbstartup/cleverwin.info force
+  delete >NIL: SYSTEMDIR:storage/4colicons/wbstartup/cleverwin.info force
+endif
+
+if exists SYSTEMDIR:prefs/presets/fullpalette
+  delete >NIL: SYSTEMDIR:prefs/presets/fullpalette force all
+endif
+
+if exists SYSTEMDIR:prefs/fpalette
+  delete >NIL: SYSTEMDIR:prefs/fpalette force
+endif
+
+if exists SYSTEMDIR:utilities/dtview2
+  delete >NIL: SYSTEMDIR:utilities/dtview2 force
+  delete >NIL: SYSTEMDIR:utilities/dtview2.info force
+  delete >NIL: SYSTEMDIR:locale/help/english/dtview2.doc force
+  delete >NIL: SYSTEMDIR:storage/glowicons/utilities/dtview2.info force
+  delete >NIL: SYSTEMDIR:storage/4colicons/utilities/dtview.info force
+endif
+
+search SYSTEMDIR:s/startup-sequence FPPrefs quiet
+if warn
+  edit SYSTEMDIR:s/startup-sequence OPT P70 with PACKAGEDIR:bestwbup121/ActivateFP.edit
+endif
+
+; Back from the party
+
+protect >NIL: SYSTEMDIR:#? +rwe ALL 
 
 
 ; update icons

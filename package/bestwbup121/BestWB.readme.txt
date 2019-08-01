@@ -1,0 +1,53 @@
+
+BestWB Update from v1.1 to v1.2
+-------------------------------
+
+Please make a complete system backup before updating!
+
+
+Requirements:
+
+A clean installation of AmigaOS 3.1.4 + BestWB v1.1
+About 2 MB of free harddisk space.
+
+
+Changes in this v1.2 update
+---------------------------
+
+New Features:
+
+.WBDock is a customizable program that creates a dock bar that holds 
+ programs for easier launch.
+ 
+.PicShow is a powerfull and efficient picture viewer.
+
+.ImageMount allows you to easily mount ADF, ISO and HDF image files.
+
+.BestWB.guide has an introductory guide about BestWB, and is seen as a 
+ Welcome! icon in Workbench.
+ 
+.Added two low resource backdrops to optionally beautify your Workbench.
+
+.Added 4 FullPalette settings.
+
+
+Updates:
+
+.MMULib 46.17 -> 46.18
+.SnoopDOS 3.8 -> 3.9
+.ToolsMenu 1.8.1 -> 1.9.1
+
+Bugfixes:
+
+-Added missing GlowIcon for SuperPlus monitor driver.
+-Removed Ystart due to unstability.
+-Removed CleverWIN due to incompatibilities with certain programs.
+
+Tweaks:
+
+-SnoopDOS now is configured by default to show only fails.
+-Fullpalette is now allways active no matter what.
+-Several icons changed for better fitting ones.
+-Removed DTView2 because now we have PicShow.
+
+ignaciogully@gmail.com

@@ -4,7 +4,7 @@ BestWB is an enhancement built for Amiga OS 3.1.4 by Gulliver.
 
 ## Description
 
-BestWB Package contains BestWB v1.0 created by Gulliver from EAB.
+BestWB Package contains BestWB v1.2 created by Gulliver from EAB.
 
 With permission from Gulliver it has been converted to a package for HstWB Installer.
 
@@ -60,7 +60,7 @@ BestWB will suit anyone that wishes a clean AmigaOS experience without the unnee
 
 ## Requirements
 
-BestWB package can be installed on any Amiga with Amiga OS 3.1.4 and about 8MB free space on a harddrive for installation.
+BestWB package can be installed on any Amiga with Amiga OS 3.1.4 and about 10MB free space on a harddrive for installation.
 
 ## Installation
 
