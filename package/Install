@@ -234,7 +234,11 @@ endif
 protect >NIL: SYSTEMDIR:#? +rwe ALL 
 
 
-; update icons
-; ------------
-;echo "Updating icons..."
-;Execute PACKAGEDIR:Update-Icons
+; install optional directory opus
+; -------------------------------
+Execute PACKAGEDIR:Install_DOpus
+
+
+; install optional whdload
+; ------------------------
+Execute PACKAGEDIR:Install_WHDLoad

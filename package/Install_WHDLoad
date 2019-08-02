@@ -1,0 +1,17 @@
+echo ""
+echo ""
+ask " Do you want to WHDLoad? (Default=NO)"
+if not warn
+  skip byebye
+endif
+
+echo "Installing WHDLoad. Please wait a few minutes..."
+
+unzip >NIL: -o PACKAGEDIR:WHDLoad185/WHDLoad185.zip -d SYSTEMDIR:
+
+protect >NIL: SYSTEMDIR:#? +rwe ALL
+
+echo ""
+echo "Installation complete."
+
+lab byebye

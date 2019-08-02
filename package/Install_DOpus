@@ -1,0 +1,57 @@
+
+; Ask the user and warn it.
+
+echo ""
+echo ""
+echo " Directory Opus (DOpus) is a powerfull and highly configurable filemanager."
+echo " Be warned, that DOpus uses aproximately 740 KB of ram, whilst DirWork (DW)"
+echo " which is the default BestWB filemenager, only uses about 100 KB of ram."
+echo " If you decide to install DOpus, DirWork will be removed."
+echo ""
+ask " Do you want to install Directory Opus? (Default=NO)"
+if not warn
+  skip byebye
+endif
+
+echo "Installing Directory Opus. Please wait a few minutes..."
+
+; remove Dirwork
+
+delete >NIL: SYSTEMDIR:tools/dw force
+delete >NIL: SYSTEMDIR:tools/dw.info force
+delete >NIL: SYSTEMDIR:tools/dwedit force
+delete >NIL: SYSTEMDIR:s/dw.config force
+delete >NIL: SYSTEMDIR:locale/help/english/dw.doc force
+delete >NIL: SYSTEMDIR:locale/help/english/dwedit.doc force
+delete >NIL: SYSTEMDIR:storage/4colicons/tools/dw.info force
+delete >NIL: SYSTEMDIR:storage/glowicons/tools/dw.info force
+
+cpu check 68000
+if warn
+  unzip >NIL: -o PACKAGEDIR:DOpus/DOpus68000.zip -d SYSTEMDIR:
+  skip crazylife
+endif
+
+unzip >NIL: -o PACKAGEDIR:DOpus/DOpus68020.zip -d SYSTEMDIR:
+
+lab crazylife
+; Here goes the crazy trip
+
+copy >NIL: PACKAGEDIR:DOpus/dopussets/storage/#? SYSTEMDIR:storage all
+
+; Here we check if we have glowicons and copy the apropiate icon for DOpus
+
+if $GlowIcons EQ 1
+  copy >NIL: PACKAGEDIR:DOpus/dopussets/storage/glowicons/tools/DOpus.info SYSTEMDIR:tools
+endif
+
+; Back from the party
+
+
+protect >NIL: SYSTEMDIR:#? +rwe ALL
+
+
+echo ""
+echo "Installation complete."
+
+lab byebye
