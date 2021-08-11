@@ -1,0 +1,48 @@
+
+BestWB Update from v1.2 to v1.3
+-------------------------------
+
+Please make a complete system backup before updating!
+
+
+Requirements:
+
+A clean installation of AmigaOS 3.1.4(.1) + BestWB v1.2
+About 2 MB of free harddisk space.
+
+
+Changes in this v1.3 update
+---------------------------
+
+New Features:
+
+.TiTleShadow is a program that enables title bar font customization.
+.AHI enables third party audio hardware under a unified interface.
+
+Updates:
+
+.IconLib46 46.4.513 -> 46.4.518
+.ToolsMenu 1.9.1 -> 1.10.2
+.TSGUI -> 2.6b21
+.WBDock 2.13 -> 2.14
+
+Bugfixes:
+
+-Cleaned up the installation script.
+-Improved some documentation.
+-Removed DOSPrefs as its operation is both buggy and quite hackish.
+
+Tweaks:
+
+-MMULibs is now optional when going full install (Not in the Update).
+-FullPalette can be easily toggled on or off quite easily.
+
+Comments:
+
+- To temporarily disable AHI, just move the AUDIO mountlist from 
+Devs/DOSDrivers to Storage.
+- To both activate and deactivate TiTleShadow and Fullpalette use the 
+Prefs/WBStartupPrefs program.
+- Donations accepted at the email below.
+
+ignaciogully@gmail.com

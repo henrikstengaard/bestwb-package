@@ -1,0 +1,6 @@
+F/ConClip/; I
+If exists SYS:WBStartup/FullPalette.starter
+   SYS:Prefs/FPPrefs
+Endif
+Z
+; W

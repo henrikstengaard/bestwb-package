@@ -2,19 +2,19 @@
 # -----------
 #
 # Author: Henrik Nørfjand Stengaard
-# Date:   2017-04-03
+# Date:   2021-08-10
 #
 # A PowerShell script to build amiga guide from markdown.
 #
 # Following software is required for running this script.
 #
 # Image Magick:
-# http://www.imagemagick.org/script/binary-releases.php
-# http://www.imagemagick.org/download/binaries/ImageMagick-6.9.3-7-Q8-x64-dll.exe
+# https://imagemagick.org/script/download.php#windows
+# https://download.imagemagick.org/ImageMagick/download/binaries/ImageMagick-7.1.0-4-Q8-x64-dll.exe
 #
 # XnView with NConvert
 # http://www.xnview.com/en/xnview/#downloads
-# http://download3.xnview.com/XnView-win-full.exe
+# http://download3.xnview.com/XnView-win-full.exe (Extended with NConvert)
 
 
 Param(
@@ -233,12 +233,12 @@ function BuildGuideLines($markdownFile, $guideFileName)
 }
 
 # get image magick directory from program files
-$imageMagickDirectory = Get-ChildItem $env:ProgramFiles | Where-Object { $_.Name -match 'ImageMagick' } | Select-Object -First 1
+$imageMagickDirectory = Get-ChildItem $env:ProgramW6432 | Where-Object { $_.Name -match 'ImageMagick' } | Select-Object -First 1
 
 # fail, if image magick directory doesn't exist
 if (!$imageMagickDirectory)
 {
-	Write-Error "Error: Image Magick doesn't exist in program files '$env:ProgramFiles'!"
+	Write-Error "Error: Image Magick doesn't exist in program files '$env:ProgramW6432'!"
 	exit 1
 }
 

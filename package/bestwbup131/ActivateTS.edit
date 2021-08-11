@@ -1,0 +1,6 @@
+F/IPrefs/; I
+If exists SYS:WBStartup/TitleShadow.starter
+   run >nil: c:TitleShadow
+Endif
+Z
+; W
