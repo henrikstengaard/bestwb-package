@@ -12,7 +12,7 @@ Original version of BestWB can be downloaded from http://lilliput.amiga-projects
 
 ---
 
-BestWB is a new workbench pack, much like BetterWB. It aims to be much like an enhancement, an updated extension to AmigaOS 3.1.4, without all those hardware penalties typically associated with these kind of packs. It is indeed a better 3.1.4 than 3.1.4 itself!
+BestWB is a new workbench pack, much like BetterWB. It aims to be much like an enhancement, an updated extension to AmigaOS 3.2 and 3.1.4, without all those hardware penalties typically associated with these kind of packs. It is indeed a better 3.2/3.1.4 than 3.2/3.1.4 itself!
 
 BestWB will suit anyone that wishes a clean AmigaOS experience without the unneeded bloat often associated with these kind of distros. It persues speed and usability and does not focus on eye candy.
 
@@ -60,7 +60,7 @@ BestWB will suit anyone that wishes a clean AmigaOS experience without the unnee
 
 ## Requirements
 
-BestWB package can be installed on any Amiga with Amiga OS 3.1.4 and about 10MB free space on a harddrive for installation.
+BestWB package can be installed on any Amiga with Amiga OS 3.2 or 3.1.4 and about 10MB free space on a harddrive for installation.
 
 ## Installation
 
@@ -89,6 +89,14 @@ The install script for BestWB package is based on Install_BestWB from BESTWB1 wi
 ## Screenshots
 
 Screenshots of BestWB package.
+
+![BestWB 3.2 1](screenshots/bestwb_3.2_1.png?raw=true)
+
+![BestWB 3.2 2](screenshots/bestwb_3.2_2.png?raw=true)
+
+![BestWB 3.2 3](screenshots/bestwb_3.2_3.png?raw=true)
+
+![BestWB 3.2 4](screenshots/bestwb_3.2_4.png?raw=true)
 
 ![BestWB 1](screenshots/bestwb_1.png?raw=true)
 
