@@ -85,10 +85,15 @@ The install script for BestWB package is based on Install_BestWB from BESTWB1 wi
 - Paths has been changed: SYS: to SYSTEMDIR:.
 - Excluded Workbench.prefs from being installed. 
 - Added GlowIcons for BestWB icons.
+- Creates backup of startup sequence as "S:Startup-Sequence.BAK".
+- Creates backup of user startup as "S:User-Startup.BAK".
+- Creates backup of original BestWB startup sequence as "S:Startup-Sequence.BW".
+- Creates backup of original BestWB user startup as "S:User-Startup.BW".
+- Patch startup sequence and user startup with BestWB changes for best Amiga OS compatibility with existing and future versions.
 
 ## Screenshots
 
-Screenshots of BestWB package.
+Screenshots of BestWB installed with Amiga OS 3.2.
 
 ![BestWB 3.2 1](screenshots/bestwb_3.2_1.png?raw=true)
 
@@ -97,6 +102,8 @@ Screenshots of BestWB package.
 ![BestWB 3.2 3](screenshots/bestwb_3.2_3.png?raw=true)
 
 ![BestWB 3.2 4](screenshots/bestwb_3.2_4.png?raw=true)
+
+Screenshots of BestWB installed with Amiga OS 3.1.4.
 
 ![BestWB 1](screenshots/bestwb_1.png?raw=true)
 

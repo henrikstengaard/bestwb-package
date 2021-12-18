@@ -2,9 +2,16 @@
 ; -------------------------------
 ;
 ; Author: Henrik Noerfjand Stengaard
-; Date: 2021-08-15
+; Date: 2021-12-17
 ;
 ; AmigaDOS script to extract and install BestWB v1.3 for Amiga OS 3.2 and 3.1.4.
+;
+; Installation makes following changes:
+; - Creates backup of startup sequence as "S:Startup-Sequence.BAK".
+; - Creates backup of user startup as "S:User-Startup.BAK".
+; - Creates backup of original BestWB startup sequence as "S:Startup-Sequence.BW".
+; - Creates backup of original BestWB user startup as "S:User-Startup.BW".
+; - Patch startup sequence and user startup with BestWB changes for best Amiga OS compatibility with existing and future versions.
 
 
 ; copy readme and screenshots to locale help for BestWB
@@ -67,6 +74,15 @@ ELSE
   ENDIF
 ENDIF
 
+; create backup of startup sequence
+IF EXISTS SYSTEMDIR:S/Startup-Sequence
+  Copy >NIL: SYSTEMDIR:S/Startup-Sequence SYSTEMDIR:S/Startup-Sequence.BAK
+ENDIF
+
+; create backup of user startup
+IF EXISTS SYSTEMDIR:S/User-Startup
+  Copy >NIL: SYSTEMDIR:S/User-Startup SYSTEMDIR:S/User-Startup.BAK
+ENDIF
 
 ; install bestwb v1.0
 ; -------------------
@@ -119,6 +135,16 @@ ELSE
   unzip >NIL: -o PACKAGEDIR:bestwb4/Utilities.zip -d SYSTEMDIR:
 ENDIF
 
+; create backup of bestwb startup sequence
+IF EXISTS SYSTEMDIR:S/Startup-Sequence
+  Copy >NIL: SYSTEMDIR:S/Startup-Sequence SYSTEMDIR:S/Startup-Sequence.BW
+ENDIF
+
+; create backup of bestwb user startup
+IF EXISTS SYSTEMDIR:S/User-Startup
+  Copy >NIL: SYSTEMDIR:S/User-Startup SYSTEMDIR:S/User-Startup.BW
+ENDIF
+
 ; set cpu 020 to 0
 set cpu020 "0"
 
@@ -146,7 +172,7 @@ IF "$cpu020" EQ 1 VAL
 ELSE
   ; update icon.library
   delete >NIL: SYSTEMDIR:libs/icon.library force
-  copy >NIL: BestWB4:icon.library SYSTEMDIR:libs
+  copy >NIL: PACKAGEDIR:bestwb4/icon.library SYSTEMDIR:libs
 ENDIF
 
 ; copy 68040.library, if it doesn't exist
@@ -281,11 +307,6 @@ if warn
   edit SYSTEMDIR:s/startup-sequence OPT P70 with PACKAGEDIR:bestwbup121/ActivateFP.edit
 endif
 
-; Back from the party
-protect >NIL: SYSTEMDIR:libs/icon.library +p
-protect >NIL: SYSTEMDIR:#? +rwe ALL
-
-
 ; install optional directory opus
 ; -------------------------------
 Execute PACKAGEDIR:Install_DOpus
@@ -317,6 +338,10 @@ IF "$cpu020" EQ 1 VAL
   ENDIF
   copy >NIL: PACKAGEDIR:bestwbup131/020/ahi.device SYSTEMDIR:Devs
 ENDIF
+
+; Back from the party
+protect >NIL: SYSTEMDIR:libs/icon.library +p
+protect >NIL: SYSTEMDIR:#? +rwe ALL
 
 ; Here goes the crazy trip
 
